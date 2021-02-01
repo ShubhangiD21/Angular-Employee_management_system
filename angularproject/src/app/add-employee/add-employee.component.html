@@ -1,0 +1,63 @@
+<!-- Simple Form -->
+<div style="width: 50%;">
+    <amexio-form form-name="validateForm" 
+      [header]="true" [show-error]="true" [body-height]="'90'" #validateForm>
+        <amexio-form-header>
+            Register Employee
+        </amexio-form-header>
+        <amexio-form-body>
+            <amexio-row>
+                <amexio-column [size]="6">
+                    <amexio-number-input [name]="'id'" [(ngModel)]="model.id" [enable-popover]="true" field-label="id"
+                        [place-holder]="'Enter id'" [allow-blank]="false" [error-msg]="'Please enter id'"
+                        [icon-feedback]="true">
+                    </amexio-number-input>
+                </amexio-column>
+            </amexio-row>
+            <amexio-row>
+                <amexio-column [size]="6">
+                    <amexio-text-input field-label="First Name" name="firstname" [(ngModel)]="model.fname"
+                        place-holder="Enter last name" allow-blank="true" error-msg="Please enter first name"
+                        [min-length]="3" min-error-msg="Minimum 3 char required" [max-length]="10"
+                        max-error-msg="Maximum 10 char allowed" icon-feedback="true">
+                    </amexio-text-input>
+                </amexio-column>
+            </amexio-row>
+            <amexio-row>
+                <amexio-column [size]="6">
+                    <amexio-text-input field-label="Last Name" name="lastName" [(ngModel)]="model.lname"
+                        place-holder="Enter last name" allow-blank="true" error-msg="Please enter last name"
+                        [min-length]="3" min-error-msg="Minimum 3 char required" [max-length]="10"
+                        max-error-msg="Maximum 10 char allowed" icon-feedback="true">
+                    </amexio-text-input>
+                </amexio-column>
+            </amexio-row>
+
+            <amexio-row>
+
+                <amexio-column size="6">
+                    <amexio-textarea-input field-label="Address" name="address" [(ngModel)]="model.address"
+                        [place-holder]="'Enter address'" [error-msg]="'Please enter address'" [icon-feedback]="true"
+                        [rows]="'1'" [columns]="'2'" [allow-blank]="false"></amexio-textarea-input>
+                </amexio-column>
+
+            </amexio-row>
+            <amexio-row>
+                <amexio-column [size]="6">
+                    <amexio-email-input [field-label]="'Email Id'" name="email" [(ngModel)]="model.email"
+                        [place-holder]="'Enter Email Id'" [allow-blank]="false" [error-msg]="'Please Enter Email Id'"
+                        [enable-popover]="true" [icon-feedback]="true">
+                    </amexio-email-input>
+                </amexio-column>
+            </amexio-row>
+        </amexio-form-body>
+        <amexio-form-action>
+            <amexio-button [label]="'Save'" [type]="'primary'" [tooltip]="'Save'"
+                (onClick)="onSaveClick(validateForm)">
+            </amexio-button>
+        </amexio-form-action>
+    </amexio-form>
+</div>
+<br>
+<amexio-notification [data]="errors" [vertical-position]="'top'" [background-color]="'red'" [foreground-color]="'white'"
+    [horizontal-position]="'right'" [auto-dismiss-msg]="true" [auto-dismiss-msg-interval]="6000"></amexio-notification>

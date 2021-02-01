@@ -1,0 +1,25 @@
+
+<div class="container"  style="width: 40%;margin-left: 30%;margin-top: 5%;">
+<amexio-card [header]="true"
+             [footer]="true"
+             [footer-align]="'left'"
+             [header-align]="'left'" style="align-items: center;">
+  <amexio-header>
+    Employee ID : {{empD.id}}
+  </amexio-header>
+  <amexio-body>
+
+    <amexio-label size="small">
+      <p>Employee First Name is : {{empD.fname}}</p>
+      <p>Last Name is : {{empD.lname}}</p>
+      <p>Email is : {{empD.email}} </p>
+      <p>Address is : {{empD.address}}</p>
+         </amexio-label>
+  </amexio-body>
+  <amexio-action>
+    <div  style="margin-left: 70%;">
+    <button style="background-color: cyan;" type="button" (click)="goToEmpList()"><b>Go Back To Employee List</b></button>
+  </div>
+  </amexio-action>
+</amexio-card>
+</div>

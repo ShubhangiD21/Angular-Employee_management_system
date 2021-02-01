@@ -1,0 +1,24 @@
+
+<h3 style="display: flex;justify-content: center;margin-top: 2%;color: blue;">Employee List </h3>
+
+<div  style="display: flex;justify-content: center;margin-top: 2%;">
+
+
+<table border="2px solid black">
+  <tr>
+    <td>Employee ID</td>
+    <td> First Name</td>
+    <td> Last Name</td>
+    <td style="text-align: center;"> Actions</td>
+  </tr>
+  <tr *ngFor ="let data of employeeList">
+    <td>{{data.id}}</td>
+    <td>{{data.fname}}</td>
+    <td>{{data.lname}}</td>
+    <td><button type="button" (click)="updateEmployee(data.id)"> Update</button></td>
+    <td><button type="button" (click)="deleteEmployee(data.id)">  Delete</button></td>
+    <td><button type="button" (click)="employeeDetails(data.id)">View Details</button></td>
+  </tr>
+</table>
+</div>
+
