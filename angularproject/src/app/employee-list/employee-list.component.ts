@@ -24,7 +24,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   employeeDetails(id: number) {
-    console.log("id is ::::::::: "+id );
+    console.log("id is ::::::::: " + id);
     this.route.navigate(['/employeedetails', id]);
 
   }
@@ -32,19 +32,13 @@ export class EmployeeListComponent implements OnInit {
   deleteEmployee(id: number) {
     console.log("inside delete com");
     this.employeeService.deleteEmpById(id);
-    alert("Employee deleted with id : "+id);
+    alert("Employee deleted with id : " + id);
     this.getAllEmployess();
 
   }
 
-  /** updateEmployee(id: any) {
-     console.log("update Employee");
-     this.route.navigate(['/updateemployee', id]);
-   }
-  
-  
-     }
- 
-   } */
 
 }
+ 
+  
+

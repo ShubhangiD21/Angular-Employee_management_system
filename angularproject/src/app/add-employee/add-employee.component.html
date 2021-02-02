@@ -1,14 +1,14 @@
 <!-- Simple Form -->
 <div style="width: 50%;">
-    <amexio-form form-name="validateForm" 
-      [header]="true" [show-error]="true" [body-height]="'90'" #validateForm>
+    <amexio-form form-name="validateForm" [header]="true" [show-error]="true" [body-height]="'80'"
+        #validateForm>
         <amexio-form-header>
             Register Employee
         </amexio-form-header>
         <amexio-form-body>
             <amexio-row>
                 <amexio-column [size]="6">
-                    <amexio-number-input [name]="'id'" [(ngModel)]="model.id" [enable-popover]="true" field-label="id"
+                    <amexio-number-input [name]="id" [(ngModel)]="model.id" [enable-popover]="true" field-label="Employee Id"
                         [place-holder]="'Enter id'" [allow-blank]="false" [error-msg]="'Please enter id'"
                         [icon-feedback]="true">
                     </amexio-number-input>
@@ -52,8 +52,8 @@
             </amexio-row>
         </amexio-form-body>
         <amexio-form-action>
-            <amexio-button [label]="'Save'" [type]="'primary'" [tooltip]="'Save'"
-                (onClick)="onSaveClick(validateForm)">
+            <amexio-button [label]="'Save'" [disabled]="'!validateForm.valid'" [type]="'primary'"  [tooltip]="'Save'"
+             (click)="onSaveClick()">                
             </amexio-button>
         </amexio-form-action>
     </amexio-form>
