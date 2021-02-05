@@ -18,17 +18,27 @@ export class EmployeeListComponent implements OnInit {
     this.getAllEmployess();
   }
 
+  /**
+   * Service call for getting all employee list from database
+   */
   getAllEmployess() {
     console.log("bye");
     this.employeeList = this.employeeService.getEmployeesList();
   }
 
+  /**
+   * 
+   * fetch Id for send it into url parameter to get particular emp details
+   */
   employeeDetails(id: number) {
     console.log("id is ::::::::: " + id);
     this.route.navigate(['/employeedetails', id]);
 
   }
 
+  /**
+   * service call for delete particular employee by Employee Id
+   */
   deleteEmployee(id: number) {
     console.log("inside delete com");
     this.employeeService.deleteEmpById(id);
@@ -36,7 +46,6 @@ export class EmployeeListComponent implements OnInit {
     this.getAllEmployess();
 
   }
-
 
 }
  

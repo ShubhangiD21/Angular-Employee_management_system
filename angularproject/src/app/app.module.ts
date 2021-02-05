@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { MainBodyComponent } from './main-body/main-body.component';
-
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -30,6 +29,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     AmexioWidgetModule,
     FormsModule,
     HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

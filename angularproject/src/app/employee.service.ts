@@ -1,7 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { Employee } from './employee';
 
 @Injectable({
@@ -13,10 +12,12 @@ export class EmployeeService implements OnInit {
   allEmployess: Employee[] = [];
   empData: any;
   ngOnInit() {
-    //  this.getEmployeesList();
+
   }
 
-
+/**
+ * API Call for save employee details into DB (Insert operation) 
+ */
   saveEmployeeToDb(data) {
     console.log("inside service of add");
     this.http.post("http://localhost:8080/saveEmployee", data).subscribe((params) => {
@@ -25,7 +26,9 @@ export class EmployeeService implements OnInit {
 
   }
 
-
+/**
+ * API Call for get All employees from DB (Read / fetch All  operation)
+ */
   getEmployeesList(): any {
     console.log("inside allemp");
     let allEmp: any = [];
@@ -45,6 +48,9 @@ export class EmployeeService implements OnInit {
     return allEmp;
   }
 
+  /**
+   *  API Call for get Particular employee details based on id (Read Operation)
+   */
   getEmployeeDetailsById(id: number): any {
     console.log(id,"id from service ");
     this.http.get<{ [data: string]: Employee }>("http://localhost:8080/getEmpById" + "/" + id)
@@ -56,7 +62,9 @@ export class EmployeeService implements OnInit {
     return detail;
   }
 
-
+/**
+ *  API Call for detele particular employee from db based on Id (Delete operation)
+ */
   deleteEmpById(id: number) {
     console.log("inside service deltet");
     this.http.delete("http://localhost:8080/deleteEmpById" + "/" + id)

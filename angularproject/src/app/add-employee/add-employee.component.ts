@@ -21,7 +21,11 @@ arrors:any[];
   }
   ngOnInit() {
   }
-  onSaveClick(form:any){
+
+  /**
+   * save employee to database
+   */
+  onSaveClick(){
       console.log(this.model);
       this.employeeService.saveEmployeeToDb(this.model);
       this.route.navigate(['/employeelist']);
@@ -32,8 +36,8 @@ arrors:any[];
 
 export class AppModel{
   id:number;
-  fname:string;
-  lname:string;
+  firstName:string;
+  lastName:string;
   email:string;
   address:string;
 }

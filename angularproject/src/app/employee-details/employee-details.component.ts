@@ -24,6 +24,9 @@ export class EmployeeDetailsComponent implements OnInit {
 
   }
 
+  /**
+   * Service call for getting employee details by Id
+   */
   getEmpById() {
     this.empD = this.employeeService.getEmployeeDetailsById(this.employeeId);
   }

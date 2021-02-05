@@ -1,22 +1,21 @@
 <!-- Simple Form -->
 <div style="width: 50%;">
-    <amexio-form form-name="validateForm" [header]="true" [show-error]="true" [body-height]="'80'"
-        #validateForm>
+    <amexio-form form-name="validateForm" [header]="true" [show-error]="true" [body-height]="'80'">
         <amexio-form-header>
-            Register Employee
+            Register Employee !!!
         </amexio-form-header>
         <amexio-form-body>
             <amexio-row>
                 <amexio-column [size]="6">
-                    <amexio-number-input [name]="id" [(ngModel)]="model.id" [enable-popover]="true" field-label="Employee Id"
-                        [place-holder]="'Enter id'" [allow-blank]="false" [error-msg]="'Please enter id'"
-                        [icon-feedback]="true">
+                    <amexio-number-input name="id" [(ngModel)]="model.id" [enable-popover]="true"
+                        field-label="Employee Id" [place-holder]="'Enter id'" [allow-blank]="false"
+                        [error-msg]="'Please enter id'" [icon-feedback]="true">
                     </amexio-number-input>
                 </amexio-column>
             </amexio-row>
             <amexio-row>
                 <amexio-column [size]="6">
-                    <amexio-text-input field-label="First Name" name="firstname" [(ngModel)]="model.fname"
+                    <amexio-text-input field-label="First Name" name="firstName" [(ngModel)]="model.firstName"
                         place-holder="Enter last name" allow-blank="true" error-msg="Please enter first name"
                         [min-length]="3" min-error-msg="Minimum 3 char required" [max-length]="10"
                         max-error-msg="Maximum 10 char allowed" icon-feedback="true">
@@ -25,7 +24,7 @@
             </amexio-row>
             <amexio-row>
                 <amexio-column [size]="6">
-                    <amexio-text-input field-label="Last Name" name="lastName" [(ngModel)]="model.lname"
+                    <amexio-text-input field-label="Last Name" name="lastName" [(ngModel)]="model.lastName"
                         place-holder="Enter last name" allow-blank="true" error-msg="Please enter last name"
                         [min-length]="3" min-error-msg="Minimum 3 char required" [max-length]="10"
                         max-error-msg="Maximum 10 char allowed" icon-feedback="true">
@@ -44,7 +43,7 @@
             </amexio-row>
             <amexio-row>
                 <amexio-column [size]="6">
-                    <amexio-email-input [field-label]="'Email Id'" name="email" [(ngModel)]="model.email"
+                    <amexio-email-input field-label="Email Id" name="email" [(ngModel)]="model.email"
                         [place-holder]="'Enter Email Id'" [allow-blank]="false" [error-msg]="'Please Enter Email Id'"
                         [enable-popover]="true" [icon-feedback]="true">
                     </amexio-email-input>
@@ -52,8 +51,8 @@
             </amexio-row>
         </amexio-form-body>
         <amexio-form-action>
-            <amexio-button [label]="'Save'" [disabled]="'!validateForm.valid'" [type]="'primary'"  [tooltip]="'Save'"
-             (click)="onSaveClick()">                
+            <amexio-button [label]="'Save'" [type]="'primary'" [tooltip]="'Save'" [form-bind]="'validateForm'"
+                (onClick)="onSaveClick()">
             </amexio-button>
         </amexio-form-action>
     </amexio-form>
