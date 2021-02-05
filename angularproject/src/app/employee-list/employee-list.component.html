@@ -1,8 +1,7 @@
 
 <h3 style="display: flex;justify-content: center;margin-top: 2%;color: blue;">Employee List </h3>
 
-<div  style="display: flex;justify-content: center;margin-top: 2%;">
-
+<div  style="display: flex;justify-content: center;margin-top: 2%;" >
 
 <table border="1px solid black">
   <tr>
@@ -15,10 +14,8 @@
     <td>{{data.id }}</td>
     <td>{{data.firstName}}</td>
     <td>{{data.lastName}}</td>
-  
     <td><button type="button" (click)="deleteEmployee(data.id)" style="background-color: rgb(253, 24, 24);">  Delete</button></td>
-    <td><button type="button" (click)="employeeDetails(data.id)" style="background-color: rgb(39, 153, 219);">View Details</button></td>
+    <td><button type="button" (click)="employeeDetails(data.firstName)" style="background-color: rgb(39, 153, 219);">View Details</button></td>
   </tr>
 </table>
 </div>
-
