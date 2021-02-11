@@ -47,12 +47,12 @@ export class EmployeeService implements OnInit {
   }
 
   /**
-   * API Call for get particular employee details by firstname
+   * API Call for get particular employee details by id
    */
-  getEmployeeDetailsByFirstName(firstName: string): any {
-    console.log(firstName, "firstName from service ");
+  getEmployeeDetailsById(id: string): any {
+    console.log(id, "firstName from service ");
     let detail: any = [];
-    this.http.get<{ [data: string]: Employee }>("http://localhost:8080/getEmpByfirstName" + "/" + firstName)
+    this.http.get<{ [data: string]: Employee }>("http://localhost:8080/findById" + "/" + id)
       .pipe(map(responseData => {
         for (const key in responseData) {
           if (responseData.hasOwnProperty(key)) {
@@ -81,22 +81,3 @@ export class EmployeeService implements OnInit {
 }
 
 
-
-
-/**
-   *  API Call for get Particular employee details based on id (Read Operation)
-
-  getEmployeeDetailsById(id: number): any {
-    console.log(id,"id from service ");
-    let detail:any={};
-    this.http.get<{[data: string]: Employee }>("http://localhost:8080/getEmpById" + "/" + id)
-      .subscribe(data => {
-      //  this.empData = data;
-         detail = data;
-        console.log(detail,"data from subscribe");
-    //  return detail;
-      })
-
-   console.log(detail, "detailll");
-    return detail;
-  }*/

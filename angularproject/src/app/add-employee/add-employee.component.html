@@ -1,22 +1,15 @@
 <!-- Simple Form -->
-<div style="width: 50%;">
-    <amexio-form form-name="validateForm" [header]="true" [show-error]="true" [body-height]="'80'">
+<div class="main-div">
+    <amexio-form form-name="validateForm" [header]="true" [show-error]="true" [body-height]="'78'" class="form-body">
         <amexio-form-header>
             Register Employee !!!
         </amexio-form-header>
         <amexio-form-body>
-            <amexio-row>
-                <amexio-column [size]="6">
-                    <amexio-number-input name="id" [(ngModel)]="model.id" [enable-popover]="true"
-                        field-label="Employee Id" [place-holder]="'Enter id'" [allow-blank]="false"
-                        [error-msg]="'Please enter id'" [icon-feedback]="true">
-                    </amexio-number-input>
-                </amexio-column>
-            </amexio-row>
+         
             <amexio-row>
                 <amexio-column [size]="6">
                     <amexio-text-input field-label="First Name" name="firstName" [(ngModel)]="model.firstName"
-                        place-holder="Enter last name" allow-blank="true" error-msg="Please enter first name"
+                        place-holder="Enter first name" allow-blank="true" error-msg="Please enter first name"
                         [min-length]="3" min-error-msg="Minimum 3 char required" [max-length]="10"
                         max-error-msg="Maximum 10 char allowed" icon-feedback="true">
                     </amexio-text-input>
@@ -58,5 +51,3 @@
     </amexio-form>
 </div>
 <br>
-<amexio-notification [data]="errors" [vertical-position]="'top'" [background-color]="'red'" [foreground-color]="'white'"
-    [horizontal-position]="'right'" [auto-dismiss-msg]="true" [auto-dismiss-msg-interval]="6000"></amexio-notification>

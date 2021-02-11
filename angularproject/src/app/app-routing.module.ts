@@ -10,7 +10,9 @@ const routes: Routes = [
     {path:'', component:WelcomeComponent},
     {path:'employeelist' , component:EmployeeListComponent},
     {path:'addemployee', component:AddEmployeeComponent},
+    {path:'employeedetails/:id', component:EmployeeDetailsComponent},
     {path:'employeedetails/:firstName', component:EmployeeDetailsComponent},
+    
     {path:'**', component:ErrorPageComponent}
 ];
 

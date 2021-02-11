@@ -1,9 +1,10 @@
-.error-message {
+.error-message-div {
     background-color: #faf0f0;
     border: 1px solid #ee7174;
     float: left;
     padding: 30px 30px;
     margin-left: 34%;
+    margin-top:10%;
   }
   
   .error-text {

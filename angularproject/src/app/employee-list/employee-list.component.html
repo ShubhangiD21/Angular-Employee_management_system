@@ -1,21 +1,28 @@
 
-<h3 style="display: flex;justify-content: center;margin-top: 2%;color: blue;">Employee List </h3>
+<h3 class="employee-list-text">Employee List </h3>
 
-<div  style="display: flex;justify-content: center;margin-top: 2%;" >
-
-<table border="1px solid black">
+<div class="employee-list-table">
+<table class="table table-striped">
+  <thead>
   <tr>
-    <td>Employee ID</td>
-    <td> First Name</td>
-    <td> Last Name</td>
-    <td style="text-align: center;"> Actions</td>
+    <th scope="col">Sr No.</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th>Action</th>
+    
   </tr>
-  <tr *ngFor ="let data of employeeList">
-    <td>{{data.id }}</td>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of employeeList; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+   
     <td>{{data.firstName}}</td>
     <td>{{data.lastName}}</td>
-    <td><button type="button" (click)="deleteEmployee(data.id)" style="background-color: rgb(253, 24, 24);">  Delete</button></td>
-    <td><button type="button" (click)="employeeDetails(data.firstName)" style="background-color: rgb(39, 153, 219);">View Details</button></td>
+    
+    <button type="button" class="btn btn-danger" (click)="deleteEmployee(data.id)">delete</button>
+    <button type="button" class="btn btn-primary" (click)="employeeDetails(data.id)" >view info</button>
   </tr>
+  </tbody>
 </table>
+
 </div>

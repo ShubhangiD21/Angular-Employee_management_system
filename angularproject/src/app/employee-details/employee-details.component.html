@@ -1,26 +1,21 @@
-<div class="container"  style="width: 35%;margin-left: 30%;margin-top: 5%;">
-<amexio-card [header]="true"
-             [footer]="true"
-             [footer-align]="'left'"
-             [header-align]="'left'" style="align-items: center;"
-             *ngFor="let data of empData"
-             >
-  <amexio-header>
-    Employee ID : {{data.id}}
-  </amexio-header>
-  <amexio-body>
-    <amexio-label size="small">
-      <p>First Name is : {{data.firstName}}</p>
-      <p>Last Name is : {{data.lastName}}</p>
-      <p>Email is : {{data.email}} </p>
-      <p>Address is : {{data.address}}</p>
-         </amexio-label>
-  </amexio-body>
-  <hr><br><hr>
-  <amexio-action>
-    <div  style="margin-left: 60%;">
-    <button style="background-color: rgb(39, 153, 219);" type="button" (click)="goToEmpList()"><b>Go Back To Employee List</b></button>
-  </div>
-  </amexio-action>
-</amexio-card>
+<div class="empdetails-div">
+  <p class="emp-text">Employee Information</p>
+  <amexio-card [header]="false" [footer]="true" [footer-align]="'left'" [header-align]="'left'"
+    style="align-items: center;" *ngFor="let data of empData">
+    
+    <amexio-body>
+      <amexio-label size="samll">
+        <p><b>Employee Id    :   </b>{{data.id}}</p>
+        <p><b>First Name  :    </b>{{data.firstName}}</p>
+        <p><b>Last Name  :    </b>{{data.lastName}}</p>
+        <p><b>Email  :    </b>{{data.email}} </p>
+        <p><b>Address  :    </b>{{data.address}}</p>
+      </amexio-label>
+    </amexio-body>
+    <hr><br>
+    <hr>
+    <amexio-action>
+      <button type="button" class="btn btn-primary" (click)="goToEmpList()"><b>Go Back To Employee List</b></button>
+    </amexio-action>
+  </amexio-card>
 </div>

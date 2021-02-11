@@ -1,15 +1,11 @@
-<amexio-layout-grid [layout]="'LayoutSample1'">
+<amexio-row>
+<amexio-nav amexioColorPalette [color-palette]="'vibrant'" [gradient]="true" [enable-side-nav-position]="false">
+  <amexio-nav-item position-left [type]="'menu'" [title]="'Employee List'"
+    (onNavItemClick)="showEmployeelist()">
+  </amexio-nav-item>
 
-  <amexio-grid-item style="border: 1px dashed black; width: 100%; " [name]="'gridheader'">
-    <div class="container"
-      style="display: flex;justify-content: flex-start;background-color: rgb(130, 164, 238);padding: 12px; ">
-      <a style="margin-left:60px;" routerLink="/employeelist">
-        <b> Employee List</b>
-      </a>
-      <a style="margin-left:60px;margin-right: 40px;" routerLink="/addemployee">
-        <b> Add Employee </b>
-      </a>
-    </div>
-
-  </amexio-grid-item>
-</amexio-layout-grid>
+  <amexio-nav-item position-left [type]="'menu'" [title]="'Add Employee'"
+    (onNavItemClick)="addEmployee()">
+  </amexio-nav-item>
+</amexio-nav>
+</amexio-row>

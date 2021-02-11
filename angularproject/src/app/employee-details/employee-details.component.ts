@@ -13,11 +13,11 @@ export class EmployeeDetailsComponent implements OnInit {
 
   constructor(private router: ActivatedRoute, private route: Router, private employeeService: EmployeeService) { }
 
-  employeeFirstName: string;
+  employeeid: string;
   empData :any=[];
 
   ngOnInit() {
-    this.employeeFirstName = this.router.snapshot.params['firstName'];
+    this.employeeid = this.router.snapshot.params['id'];
     this.getEmpByName();
   }
 
@@ -25,7 +25,7 @@ export class EmployeeDetailsComponent implements OnInit {
    * Service call for getting employee details by name
    */
   getEmpByName() {
-    this.empData = this.employeeService.getEmployeeDetailsByFirstName(this.employeeFirstName);
+    this.empData = this.employeeService.getEmployeeDetailsById(this.employeeid);
    console.log(this.empData,"emp from ts file");
   }
 

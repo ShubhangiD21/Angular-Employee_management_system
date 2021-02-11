@@ -1,0 +1,16 @@
+
+.employee-list-text{
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    color: blue;
+}
+
+.employee-list-table{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    width:60%;
+    margin-left: 20%;
+    border-color: 5px black;
+}

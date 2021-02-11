@@ -35,7 +35,7 @@ arrors:any[];
 }
 
 export class AppModel{
-  id:number;
+ 
   firstName:string;
   lastName:string;
   email:string;

@@ -10,7 +10,7 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeListComponent implements OnInit {
 
   employeeList: any[];
-  empData :any=[];
+  empData: any = [];
   constructor(private route: Router, private employeeService: EmployeeService) { }
 
   ngOnInit() {
@@ -26,11 +26,11 @@ export class EmployeeListComponent implements OnInit {
   }
 
   /**
-   * fetch Firstname for send it into url parameter to get particular emp details
-   */
-  employeeDetails(firstName: string) {
-    console.log("firstName is ::::::::: " + firstName);
-    this.route.navigate(['/employeedetails',firstName]);
+   * fetch id for send it into url parameter to get particular emp details
+  */
+  employeeDetails(id: string) {
+    console.log("id is ::::::::: " + id);
+    this.route.navigate(['/employeedetails', id]);
   }
 
   /**

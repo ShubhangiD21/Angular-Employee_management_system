@@ -1,3 +1,10 @@
-info{
-color: blue;
+.empdetails-div{
+    width: 30%;
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+.emp-text{
+    font-size: 20px;
+    color: blue;
 }

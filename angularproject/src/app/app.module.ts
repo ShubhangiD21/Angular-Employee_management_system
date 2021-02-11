@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AmexioWidgetModule } from "amexio-ng-extensions"; // Import Amexio library
 import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
@@ -11,6 +12,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { TranslocoRootModule } from './transloco/transloco-root.module';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     AmexioWidgetModule,
     FormsModule,
     HttpClientModule,
+    TranslocoRootModule,
+    NgbModule,
     
   ],
   providers: [],
