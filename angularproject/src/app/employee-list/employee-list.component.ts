@@ -36,11 +36,15 @@ export class EmployeeListComponent implements OnInit {
   /**
    * service call for delete particular employee by Employee Id
    */
-  deleteEmployee(id: number) {
+  deleteEmployee(id: string) {
     console.log("inside delete com");
     this.employeeService.deleteEmpById(id);
     alert("Employee deleted with id : " + id);
     this.getAllEmployess();
+  }
+
+  updateEmployee(id:number){
+    this.route.navigate(['/updateemployee',id])
   }
 
 }

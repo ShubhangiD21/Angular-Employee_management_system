@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { TranslocoRootModule } from './transloco/transloco-root.module';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TranslocoRootModule } from './transloco/transloco-root.module';
     EmployeeDetailsComponent,
     WelcomeComponent,
     ErrorPageComponent,
+    UpdateEmployeeComponent,
   ],
   imports: [
     BrowserModule,

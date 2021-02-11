@@ -50,7 +50,49 @@ export class EmployeeService implements OnInit {
    * API Call for get particular employee details by id
    */
   getEmployeeDetailsById(id: string): any {
-    console.log(id, "firstName from service ");
+    console.log(id, "id from service ");
+    let details = []
+    this.http.get<{ [data: string]: Employee }>("http://localhost:8080/findById" + "/" + id)
+      .subscribe(posts => {
+        details.push(posts);
+        console.log(posts,"data");
+      })
+      return details;
+  }
+
+  /**
+   * 
+   * Update Employee
+   */
+  updateEmployee(id:string,dataToUpdate:any){
+    this.http.put(`http://localhost:8080/update/${id}`,dataToUpdate)
+    .subscribe((response) => {
+      console.log("Updated the employee");
+    });
+    this.getEmployeesList();
+  }
+
+  /**
+   *  API Call for detele particular employee from db based on Id (Delete operation)
+   */
+  deleteEmpById(id: string) {
+    console.log("inside service deltet");
+    this.http.delete("http://localhost:8080/deleteEmpById" + "/" + id)
+      .subscribe(data => {
+        console.log(data);
+      })
+  }
+
+}
+
+
+
+
+ /**
+   * API Call for get particular employee details by id
+   
+  getEmployeeDetailsById(id: string): any {
+    console.log(id, "id from service ");
     let detail: any = [];
     this.http.get<{ [data: string]: Employee }>("http://localhost:8080/findById" + "/" + id)
       .pipe(map(responseData => {
@@ -64,20 +106,7 @@ export class EmployeeService implements OnInit {
       .subscribe(posts => {
         console.log(detail);
       })
+      console.log(detail,"detial from service");
     return detail;
   }
-
-  /**
-   *  API Call for detele particular employee from db based on Id (Delete operation)
-   */
-  deleteEmpById(id: number) {
-    console.log("inside service deltet");
-    this.http.delete("http://localhost:8080/deleteEmpById" + "/" + id)
-      .subscribe(data => {
-        console.log(data);
-      })
-  }
-
-}
-
-
+*/

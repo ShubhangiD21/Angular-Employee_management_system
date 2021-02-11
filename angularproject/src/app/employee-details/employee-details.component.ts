@@ -18,13 +18,13 @@ export class EmployeeDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.employeeid = this.router.snapshot.params['id'];
-    this.getEmpByName();
+    this.getEmpById();
   }
 
   /**
    * Service call for getting employee details by name
    */
-  getEmpByName() {
+  getEmpById() {
     this.empData = this.employeeService.getEmployeeDetailsById(this.employeeid);
    console.log(this.empData,"emp from ts file");
   }

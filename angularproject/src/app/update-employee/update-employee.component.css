@@ -1,0 +1,8 @@
+.main-div{
+     margin-top:7%;
+    display: flex;
+    justify-content: center;
+}
+.form-body{
+    width: 35%;
+}

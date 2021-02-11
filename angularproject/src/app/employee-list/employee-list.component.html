@@ -15,12 +15,12 @@
   <tbody>
   <tr *ngFor="let data of employeeList; index as i">
     <th scope="row">{{ i + 1 }}</th>
-   
     <td>{{data.firstName}}</td>
     <td>{{data.lastName}}</td>
     
+    <button type="button" class="btn btn-primary" (click)="employeeDetails(data.id)">view info</button>
+    <button type="button" class="btn btn-warning" (click)="updateEmployee(data.id)">Update</button>
     <button type="button" class="btn btn-danger" (click)="deleteEmployee(data.id)">delete</button>
-    <button type="button" class="btn btn-primary" (click)="employeeDetails(data.id)" >view info</button>
   </tr>
   </tbody>
 </table>

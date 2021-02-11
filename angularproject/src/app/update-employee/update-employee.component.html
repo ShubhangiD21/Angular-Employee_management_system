@@ -1,0 +1,35 @@
+<!-- Simple Form -->
+<div class="main-div">
+  
+  <amexio-form form-name="updateForm" [header]="true" [show-error]="true" [body-height]="'78'" class="form-body">
+      <amexio-form-header>
+          Update Employee !!!
+      </amexio-form-header>
+      <amexio-form-body>
+          <amexio-row>
+              <amexio-column size="6">
+                  <amexio-textarea-input field-label="Address" name="address" [(ngModel)]="model.address"
+                      [place-holder]="'Enter address'" [error-msg]="'Please enter address'" [icon-feedback]="true"
+                      [rows]="'1'" [columns]="'2'" [allow-blank]="false"></amexio-textarea-input>
+              </amexio-column>
+          </amexio-row>
+          <amexio-row>
+              <amexio-column [size]="6">
+                  <amexio-email-input field-label="Email Id" name="email" [(ngModel)]="model.email"
+                      [place-holder]="'Enter Email Id'" [allow-blank]="false" [error-msg]="'Please Enter Email Id'"
+                      [enable-popover]="true" [icon-feedback]="true">
+                  </amexio-email-input>
+              </amexio-column>
+          </amexio-row>
+      </amexio-form-body>
+      <amexio-form-action>
+          <amexio-button [label]="'Update'" [type]="'primary'" [tooltip]="'Update'" [form-bind]="'updateForm'"
+              (onClick)="onSaveClick()">
+          </amexio-button>
+      </amexio-form-action>
+  </amexio-form>
+</div>
+
+<br>
+
+
