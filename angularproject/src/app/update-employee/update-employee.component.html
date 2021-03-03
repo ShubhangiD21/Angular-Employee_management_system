@@ -1,7 +1,7 @@
 <!-- Simple Form -->
 <div class="main-div">
   
-  <amexio-form form-name="updateForm" [header]="true" [show-error]="true" [body-height]="'78'" class="form-body">
+  <amexio-form form-name="updateForm" [header]="true" [show-error]="true" [body-height]="'40'" class="form-body">
       <amexio-form-header>
           Update Employee !!!
       </amexio-form-header>
@@ -24,12 +24,12 @@
       </amexio-form-body>
       <amexio-form-action>
           <amexio-button [label]="'Update'" [type]="'primary'" [tooltip]="'Update'" [form-bind]="'updateForm'"
-              (onClick)="onSaveClick()">
+              (onClick)="onUpdateClick()">
           </amexio-button>
+          <amexio-button [label]="'Cancel'" [type]="'primary'" [tooltip]="'Cancel'"  (onClick)="handleCancel()"></amexio-button>
       </amexio-form-action>
   </amexio-form>
 </div>
-
 <br>
 
 

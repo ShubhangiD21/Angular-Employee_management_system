@@ -85,28 +85,3 @@ export class EmployeeService implements OnInit {
 
 }
 
-
-
-
- /**
-   * API Call for get particular employee details by id
-   
-  getEmployeeDetailsById(id: string): any {
-    console.log(id, "id from service ");
-    let detail: any = [];
-    this.http.get<{ [data: string]: Employee }>("http://localhost:8080/findById" + "/" + id)
-      .pipe(map(responseData => {
-        for (const key in responseData) {
-          if (responseData.hasOwnProperty(key)) {
-            detail.push({ ...responseData[key], k: key })
-          }
-        }
-        return detail;
-      }))
-      .subscribe(posts => {
-        console.log(detail);
-      })
-      console.log(detail,"detial from service");
-    return detail;
-  }
-*/
