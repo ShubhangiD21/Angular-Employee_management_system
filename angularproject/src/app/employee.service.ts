@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Employee } from './employee';
+import urlPath from "./Constants/constant";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class EmployeeService implements OnInit {
    */
   saveEmployeeToDb(data) {
     console.log("inside service of add");
-    this.http.post("http://localhost:8080/saveEmployee", data).subscribe((params) => {
+    this.http.post(urlPath.AddEmployee, data).subscribe((params) => {
       console.log(params);
     });
 
@@ -31,7 +32,7 @@ export class EmployeeService implements OnInit {
   getEmployeesList(): any {
     console.log("inside allemp");
     let allEmp: any = [];
-    this.http.get<{ [data: string]: Employee }>("http://localhost:8080/getAllEmployee")
+    this.http.get<{ [data: string]: Employee }>(urlPath.GetAllEmployess)
       .pipe(map(resData => {
         for (const key in resData) {
           if (resData.hasOwnProperty(key)) {
@@ -52,7 +53,7 @@ export class EmployeeService implements OnInit {
   getEmployeeDetailsById(id: string): any {
     console.log(id, "id from service ");
     let details = []
-    this.http.get<{ [data: string]: Employee }>("http://localhost:8080/findById" + "/" + id)
+    this.http.get<{ [data: string]: Employee }>(urlPath.GetEmployeeByID + "/" + id)
       .subscribe(posts => {
         details.push(posts);
         console.log(posts,"data");
@@ -65,7 +66,7 @@ export class EmployeeService implements OnInit {
    * Update Employee
    */
   updateEmployee(id:string,dataToUpdate:any){
-    this.http.put(`http://localhost:8080/update/${id}`,dataToUpdate)
+    this.http.put(`${urlPath.UpdateEmployee}/${id}`,dataToUpdate)
     .subscribe((response) => {
       console.log("Updated the employee");
     });
@@ -77,7 +78,7 @@ export class EmployeeService implements OnInit {
    */
   deleteEmpById(id: string) {
     console.log("inside service deltet");
-    this.http.delete("http://localhost:8080/deleteEmpById" + "/" + id)
+    this.http.delete(urlPath.deleteEmpployeeById + "/" + id)
       .subscribe(data => {
         console.log(data);
       })
